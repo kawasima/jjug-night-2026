@@ -1,0 +1,110 @@
+/* @theme jjug */
+
+/* 既存テーマを継承したいなら import する（例: default） */
+@import "default";
+
+/* ============================================
+   表紙タイトルの調整
+   ============================================ */
+
+/* 最初のスライド（表紙）のh1タイトル */
+section:first-of-type h1 {
+  max-width: 80%;
+  margin: 0 auto 1em;
+  line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+/* 表紙の著者名（h1直後のp要素） */
+section:first-of-type h1 + p {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 2em;
+  color: #666;
+}
+
+/* ここが方法Aの本体。スライド(=section)を縦スクロール可能にする */
+section {
+  overflow-y: auto !important;
+}
+
+/* ついでに、長い表が見切れないようにするなら例 */
+section table {
+  width: 100%;
+}
+
+/* 縦スクロール時に下が切れて見えるのが嫌なら余白を足す例 */
+section {
+  padding-bottom: 2rem;
+}
+
+/* ============================================
+   ドメイン記述ミニ言語のシンタックスハイライト
+   ============================================ */
+
+/* コードブロック全体の背景 */
+section pre {
+  background-color: #f5f5f5;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 1.5em;
+  overflow-x: auto;
+}
+
+section code {
+  color: #333333;
+  font-family: 'Fira Code', 'Consolas', 'Menlo', monospace;
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+
+/* キーワード (data, behavior, List) */
+section code .hljs-keyword {
+  color: #0563c1;
+  font-weight: bold;
+}
+
+/* 演算子 (AND, OR) */
+section code .hljs-built_in {
+  color: #008080;
+  font-weight: bold;
+}
+
+/* 型名・識別子 */
+section code .hljs-type {
+  color: #008080;
+}
+
+/* タイトル（data/behaviorの後の名前） */
+section code .hljs-title {
+  color: #795548;
+  font-weight: bold;
+}
+
+/* クラス名 */
+section code .hljs-title.class_ {
+  color: #008080;
+}
+
+/* 演算子記号 (=, ->, ?) */
+section code .hljs-operator {
+  color: #333333;
+}
+
+/* コメント */
+section code .hljs-comment {
+  color: #6a9955;
+  font-style: italic;
+}
+
+/* 文字列 */
+section code .hljs-string {
+  color: #a31515;
+}
+
+/* 数値 */
+section code .hljs-number {
+  color: #09885d;
+}
