@@ -25,19 +25,26 @@ section:first-of-type h1 + p {
   color: #666;
 }
 
-/* ここが方法Aの本体。スライド(=section)を縦スクロール可能にする */
+/* スライド内のスクロール・レイアウト */
 section {
-  overflow-y: auto !important;
+  overflow-y: auto;
+  padding-bottom: 2rem;
 }
 
-/* ついでに、長い表が見切れないようにするなら例 */
 section table {
   width: 100%;
 }
 
-/* 縦スクロール時に下が切れて見えるのが嫌なら余白を足す例 */
-section {
-  padding-bottom: 2rem;
+section img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+/* コードブロックの auto-scaling を無効にして固定サイズにする */
+section pre::part(auto-scaling) {
+  max-height: none !important;
 }
 
 /* ============================================
@@ -53,10 +60,10 @@ section pre {
   overflow-x: auto;
 }
 
-section code {
+section pre code {
   color: #333333;
   font-family: 'Fira Code', 'Consolas', 'Menlo', monospace;
-  font-size: 0.85em;
+  font-size: 20px !important;
   line-height: 1.6;
 }
 
